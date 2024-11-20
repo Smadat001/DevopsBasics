@@ -12,7 +12,6 @@ steps:
 - task: Maven@3
   inputs:
     mavenPomFile: 'pom.xml'
-    mavenDirectory: 'C:\\Program Files\\Apache\\maven\\apache-maven-3.9.9\\bin'
     mavenOptions: '-Xmx3072m'
     javaHomeOption: 'Path'
     publishJUnitResults: true
