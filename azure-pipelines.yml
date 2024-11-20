@@ -9,14 +9,13 @@ trigger:
 pool: bagent1
 
 steps:
-- task: Maven@3
+- task: Maven@4
   inputs:
     mavenPomFile: 'pom.xml'
-    mavenOptions: '-Xmx3072m'
-    javaHomeOption: 'Path'
     publishJUnitResults: true
     testResultsFiles: '**/surefire-reports/TEST-*.xml'
-    goals: 'package'
-  env:
-    JAVA_HOME: 'C:\\Program Files\\Java\\jdk-23'
-    PATH: 'C:\\Program Files\\Java\\jdk-23\\bin;$(PATH)'
+    javaHomeOption: 'JDKVersion'
+    mavenVersionOption: 'Default'
+    mavenAuthenticateFeed: false
+    effectivePomSkip: false
+    sonarQubeRunAnalysis: false
