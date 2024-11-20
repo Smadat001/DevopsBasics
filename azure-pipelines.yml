@@ -19,3 +19,4 @@ steps:
     mavenAuthenticateFeed: false
     effectivePomSkip: false
     sonarQubeRunAnalysis: false
+    mavenDirectory: 'C:\\Program Files\\Apache\\maven\\apache-maven-3.9.9\\bin'
