@@ -9,7 +9,7 @@ trigger:
 pool: bagent1
 
 steps:
-- task: Maven@4
+- task: Maven@3
   inputs:
     mavenVersionSelection: 'Path'
     mavenPath: 'C:\\Program Files\\Apache\\maven\\apache-maven-3.9.9'
