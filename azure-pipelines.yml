@@ -11,11 +11,14 @@ pool: bagent1
 steps:
 - task: Maven@4
   inputs:
+    mavenVersionSelection: 'Path'
+    mavenPath: 'C:\\Program Files\\Apache\\maven\\apache-maven-3.9.9'
     mavenPomFile: 'pom.xml'
     publishJUnitResults: true
     testResultsFiles: '**/surefire-reports/TEST-*.xml'
     javaHomeOption: 'JDKVersion'
-    mavenVersionOption: 'Default'
     mavenAuthenticateFeed: false
     effectivePomSkip: false
     sonarQubeRunAnalysis: false
+
+
