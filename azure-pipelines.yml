@@ -13,12 +13,21 @@ variables:
 pool: bagent1
 
 steps:
-- task: Maven@4
+- script: |
+    echo Adding Maven to PATH
+    set PATH=C:\Program Files\Apache\maven\apache-maven-3.9.9\bin;%PATH%
+  displayName: 'Add Maven to PATH'
+  
+- task: Maven@3
   inputs:
-    javaHomeOption: 'JDKVersion'
     mavenPomFile: 'pom.xml'
+    mavenOptions: '-Xmx3072m'
+    javaHomeOption: 'JDKVersion'
+    jdkVersionOption: '23'
+    jdkArchitectureOption: 'x64'
     publishJUnitResults: true
     testResultsFiles: '**/surefire-reports/TEST-*.xml'
     goals: 'package'
+
 
 
