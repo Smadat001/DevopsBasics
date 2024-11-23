@@ -34,3 +34,14 @@ steps:
     ArtifactName: 'warfile'
     publishLocation: 'Container'
 
+- task: Docker@2
+  inputs:
+    containerRegistry: 'dock1'
+    command: 'login'
+
+- task: Docker@2
+  inputs:
+    containerRegistry: 'dock1'
+    repository: 'smadblob/azuredevtest'
+    command: 'buildAndPush'
+    Dockerfile: '**/AzureDockerfile'
